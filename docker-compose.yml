@@ -1,0 +1,15 @@
+version: "3.1"
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2017-CU29-GDR1-ubuntu-16.04
+    user: '0:0'
+    container_name: sqlserver_gdd_2017
+    ports:
+      - 1433:1433
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: PasswordO1.
+      MSSQL_PID: Express
+    volumes:
+      - ~/Development/dbs/sqlserver/sqlserver-data:/var/opt/mssql
